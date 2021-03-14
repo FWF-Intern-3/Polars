@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ /*修改placeholder字体样式*/
+ input:-moz-placeholder,textarea:-moz-placeholder{  
+    color: white;/* Mozilla Firefox 4 to 18 */
+    /* opacity: 0.7; */
+    font-size: 17px;
+ }
+ input：：-moz-placeholder{  
+    color: white;/* Mozilla Firefox 19+ */
+    /* opacity: 0.7; */
+    font-size: 17px;
+ }
+ input:-ms-input-placeholder,textarea:-ms-input-placeholder{  
+    color: white;
+    /* opacity: 1; */
+    font-size: 17px;
+}  
+ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{  
+    color: white;
+    /* opacity: 1; */
+    font-size: 17px;           /*   改动   */
+ }
+#container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* background-image: linear-gradient(to right, #434343 0%, black 100%); */
+    /* background-image: linear-gradient(to top, #09203f 0%, #537895 100%); */
+    /* background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%); */
+    display: grid;
+    grid-template-rows: 70px 30px 1fr 1fr;
+    grid-template-columns: repeat(3,1fr);
+}
+#bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 1000px;
+    z-index: -10;
+    background: url('/client/static/img/01\ 141659379_resized.jpg') no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-position: center 0;
+}
+h1{
+    color: white;
+    text-align: center;
+    letter-spacing: 20px;
+    font-size: 50px;
+    font-weight:1200;
+    grid-area: 1/2/1/3;
+}
+#inforOne{
+    display: inline-block;
+    width: auto;
+    color: white;
+    font-size: 25px;
+    font-weight: 20;
+    margin-top: 3%;
+    margin-left: 150px;
+    line-height: 1.6;
+    grid-area: 2/1/3/2;
+}
+#svg1{
+    margin-top: -200px;
+    margin-left:10%;
+    width: 500px;
+    grid-area: 3/1/4/2;
+}
+#side{
+    color: white;
+    grid-area: 2/2/3/3;
+    text-align: center;
+    letter-spacing: 10px;
+}
+#signUp{
+    width: 400px;
+    height:350px;
+    background-image: linear-gradient(to top, #4fb576 0%, #44c489 30%, #28a9ae 46%, #28a2b7 59%, #4c7788 71%, #6c4f63 86%, #432c39 100%);
+    border-radius: 30px;
+    grid-area: 3/2/4/3;
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 100px 200px 100px;
+    grid-template-rows: repeat(6,58px);
+    justify-self: center;
+}
+#signUp-head{
+    color: white;
+    font-size: 40px;
+    font-weight: 100;
+    grid-area: 1/2/2/3; 
+    letter-spacing: 35px;
+    margin-left: 45px;
+    margin-top: 9px;
+}
+input{
+    outline:none; 
+}
+#signUp-email{
+    grid-area: 2/2/3/3; 
+    height: 40px;
+    width: 250px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    letter-spacing: 5px;
+    font-size: 15px;
+    text-indent: 35px;
+    border-radius: 25px;
+    margin-top: 14px;
+    justify-self: center;
+}
+#signUp-captcha{
+    grid-area: 3/2/4/3;
+    height: 40px;
+    width: 150px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    letter-spacing: 5px;
+    font-size: 15px;
+    text-indent: 35px;
+    border-radius: 25px;
+    margin-top: 14px;
+    margin-left: -26.5px;
+}
+#signUp-getCaptcha{
+    grid-area: 3/3/4/4;
+    color: white;
+    margin-top: 23px;
+    margin-left: -60px;
+}
+#signUp-password{
+    grid-area: 4/2/5/3;
+    height: 40px;
+    width: 250px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    letter-spacing: 5px;
+    font-size: 15px;
+    text-indent: 35px;
+    border-radius: 25px;
+    justify-self: center;
+    margin-top: 12px;
+}
+#signUp-conPassword{
+    grid-area: 5/2/6/3;
+    height: 40px;
+    width: 250px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    letter-spacing: 5px;
+    font-size: 15px;
+    text-indent: 35px;
+    border-radius: 25px;
+    justify-self: center;
+    margin-top: 12px;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    color: red;
+}
+#signUp-submit{
+    grid-area: 6/2/7/3;
+    height: 40px;
+    width: 250px;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 22px;
+    letter-spacing: 15px;
+    background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
+    outline: none;
+    margin-top: 10px;
+    padding-left: 21px;
+    justify-self: center;
+}
+#signUp-submit:hover{
+    background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+}
