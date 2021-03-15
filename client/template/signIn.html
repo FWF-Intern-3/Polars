@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polars-登录</title>
-    <link rel="stylesheet" href="/client/style/signIn.css">
+    <link rel="stylesheet" href="/style/signIn.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <div id='bg'></div>
@@ -14,18 +15,16 @@
         <h4 id="side">遇见更好的你</h4>
         <div id="signIn">
             <div id="signIn-head">登录</div>
-            <input type="email" placeholder="用户名/邮箱" id="signIn-email">
+            <input type="text" placeholder="用户名/邮箱" id="signIn-email">
             <input type="password" placeholder="密码" id="signIn-password">
             <ul>
-                <li onclick="closeIn()"><a href="#">注册账号 |</a></li>
+                <li id="signIn-toUp"><a href="#">注册账号 |</a></li>
                 <li><a href="#">帮助 |</a></li>
                 <li><a href="#">找回密码</a></li>
             </ul>
             <button id="signIn-submit">登录</button>
         </div>
-
     </div>
-    <script src="/client/src/signIn.js"></script>
-    <script src="/client/src/check.js"></script>
+    <script type="module" src="/src/signIn.js"></script>
 </body> 
 </html>
