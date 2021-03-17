@@ -3,6 +3,6 @@
  * @param {string} id 
  * @returns object
  */
-export const $ = function(id){
+export const $ = (id) => {
         return document.getElementById(id)
 }
