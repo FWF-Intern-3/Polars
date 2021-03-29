@@ -10,7 +10,6 @@ export const checkPassword = function(password){
         else{
             let need = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/;
             if(need.test(password)){
-                alert('密码格式正确');  // 需要取消弹窗
                 return true;
             }
             else{
@@ -27,7 +26,6 @@ export const checkEmail = function(email){
     }
     let need = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
     if(need.test(email)){
-        alert('邮箱格式正确');
         return true;
     }
     else{
@@ -43,5 +41,18 @@ export const checkCaptch = function(captch){
     else{
         alert('输入正确格式验证码');
         return false
+    }
+}
+
+export const checkUserName = (userName) => {
+    if(userName == ''){
+        alert('请输入用户名');
+        return false;
+    }
+    let need = /^[A-Za-z]+$/;
+    if(need.test(userName)){
+        return true;
+    }else{
+        alert('用户名只能由英文字母组成！')
     }
 }

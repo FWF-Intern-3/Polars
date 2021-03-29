@@ -6,3 +6,13 @@
 export const $ = (id) => {
         return document.getElementById(id)
 }
+
+export const get = (passPlass) => {
+        return document.getElementsByClassName(passPlass)[0]
+}
+
+
+export const getNum = () => {
+        return Math.ceil(Math.random()*15)
+}
+
