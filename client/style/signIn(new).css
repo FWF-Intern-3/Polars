@@ -26,6 +26,11 @@
     letter-spacing: 5px;
  }
 
+ input{
+    font-size: 17px;
+    letter-spacing: 3px;
+}
+
 #container{
     width: 100%;
     height: 100%;
@@ -58,9 +63,10 @@ h1{
     width: 700px;
     height: 450px;
     /* background-image: linear-gradient(to top, #4fb576 0%, #44c489 30%, #28a9ae 46%, #28a2b7 59%, #4c7788 71%, #6c4f63 86%, #432c39 100%); */
-    background-color: white;
-    background-color: rgb(94, 83, 20);
-    grid-area: 4/2/13/3;
+    background-color: #8766AD;
+    /* grid-area: 4/2/13/3; */
+    grid-area: 3/2/12/3;
+    margin-top: 30px;
     border-radius: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -68,14 +74,7 @@ h1{
 }
 
 #signIn-side1{
-    /* background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
-    background-blend-mode: multiply,multiply; */
-    /* background-color: #393939;
-    background-image: linear-gradient(to top, #4fb576 0%, #44c489 30%, #28a9ae 46%, #28a2b7 59%, #4c7788 71%, #6c4f63 86%, #432c39 100%); */
-    background-color: rgb(43, 18, 22);/* 李紫 */
-    background-color: rgb(98, 29, 52);/*鸡冠紫*/
-    background-color: rgb(75, 30, 47); 
-    background-color: rgb(94, 83, 20); /*橄榄绿   这个不错！*/
+    background-color: #8766AD;
     color: white;
     border-radius:50px 0 0 50px ;
     display: grid;
@@ -87,11 +86,8 @@ h1{
     background-color: violet;
     border-radius: 0 50px 50px 0;
     color: white;
-    /* background-image: linear-gradient(to top, #4fb576 0%, #44c489 30%, #28a9ae 46%, #28a2b7 59%, #4c7788 71%, #6c4f63 86%, #432c39 100%); */
-    background-color: rgb(43, 18, 22); /* 李紫 */
-    background-color: rgb(98, 29, 52);/*鸡冠紫*/
-    background-color: rgb(75, 30, 47);
-    background-color: rgb(94, 83, 20); /*橄榄绿   这个不错！*/
+    /*下面这个还不错*/
+    background-image: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);
     display: grid;
     grid-template-rows: repeat(12,37px);
     width: 349px;
