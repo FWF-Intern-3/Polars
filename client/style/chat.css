@@ -1,0 +1,408 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(11,1fr);
+    grid-template-rows: repeat(11,1fr);
+}
+
+.chatBox{
+    grid-area: 6/6/7/7;
+    animation: chatCard 0.4s 1;
+}
+@keyframes chatCard {
+	0%{
+		transform: scale(0.9);
+		opacity: 0.8;
+	}
+	100%{
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.leftSide{
+    width: 320px;
+    height: 500px;
+    background-color: #1C2938;
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: 1fr 0.05fr 5.95fr;
+    grid-template-rows: 1fr 0.01fr 10.45fr;
+}
+
+.headBar{
+    grid-area: 1/3/2/4;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+}
+
+.headBarInsideOne{
+    color: white;
+    font-size: 23px;
+    font-weight: 50;
+    letter-spacing: 5px;
+    margin-top: 7px;
+    margin-left: 75px;
+}
+
+.colLineOne{
+    grid-area:3/2/4/3 ;
+    background-color: white;
+}
+
+.colLineTwo{
+    grid-area:1/2/2/3 ;
+    background-color: white;
+}
+
+.rowLineOne{
+    grid-area: 2/3/3/4;
+    background-color: white;
+}
+
+.leftBar{
+    color: white;
+    grid-area: 3/1/4/2;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 3.5fr 1fr;
+}
+
+.usersList{
+    color: white;
+    grid-area: 3/3/4/4;
+    overflow: scroll;
+    height: 96%;
+    font-weight: 100;
+
+}
+
+/* .usersListBox{
+    overflow:unset;
+} */
+
+::-webkit-scrollbar
+{
+	width: 5px;
+	height: 0px;
+	background-color: #F5F5F5;
+}
+ 
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius:0 ;
+	background-color: #1C2938;
+}
+ 
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: rgb(104, 76, 76);
+}
+
+
+/* 盒子扩张备用样式 */
+
+.expend{
+    /* width: 320px; */
+    width: 800px;
+    height: 500px;
+    background-color: #1C2938;
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: 1fr 0.05fr 5.95fr 10.5fr;
+    grid-template-rows: 1fr 0.01fr 10.45fr;
+}
+
+.chanChatBox{
+    width: 800px;
+    height: 500px;
+    grid-area: 6/6/7/7;
+    display: grid;
+    grid-template-columns: 7fr 10.5fr;
+}
+
+.chanLeftSide{
+    width: 320px;
+    height: 500px;
+    background-color: #1C2938;
+    border-radius: 25px 0 0 25px;
+    grid-area: 1/1/2/2;
+    display: grid;
+    grid-template-columns: 1fr 0.05fr 5.95fr;
+    grid-template-rows: 1fr 0.01fr 10.45fr;
+}
+
+
+/* ---------------------------- */
+
+.rightSide__hide{
+    background-color: #1C2938;
+    border-radius: 0 25px 25px 0;
+    display: none;
+}
+
+.rightSide__show{
+    background-color: #1C2938;
+    border-radius: 0 25px 25px 0;
+    animation: showRight 0.2s 1;
+    display: grid;
+    grid-template-columns: 0.05fr 10.4fr;
+}
+
+@keyframes showRight {
+    0%{
+        transform: scale(0.95);
+        opacity: 0.6;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* --------------------------------------------
+聊天框   rightSide */
+
+
+
+.colLineThree{
+    background-color: white;
+}
+
+.rightInsodeBox{
+    display: grid;
+    /* height: 500px; */
+    grid-template-rows: 1fr 0.01fr 6.44fr 0.01fr 4fr;
+}
+
+
+    /* --------------------------------------------------------
+    RHeadBar */
+.RHeadBar{
+    display: grid;
+    grid-template-columns:4fr 1fr ;
+}
+
+.RUserName{
+    color: white;
+    font-size: 23px;
+    font-weight: 50;
+    letter-spacing: 5px;
+    margin-top: 7px;
+    margin-left: 200px;
+}
+
+.sendMsg{   
+    width: 130px;
+    height: 30px;
+    color: white;
+    outline: none;
+    border: none;
+    background-color: #e8b004;
+    font-size: 15px;
+    letter-spacing: 5px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.sendMsg:hover{
+    background-color: yellow;
+    color: black;
+}
+
+    /* -------------------------------------------------------------- */
+
+    
+.rowLineTwo{
+    background-color: white;
+}
+
+.rowLineThree{
+    background-color: white;
+}
+
+    /* RChatBar--------------------------------------------------------- */
+.RChatBar{
+    height:280.98px ;
+    overflow:scroll;
+}
+
+.msgBar{
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-weight: 100;
+}
+
+li{
+    list-style: none;
+}
+
+.leftMsg{
+    height: 20px;
+    width: auto;
+    border-radius: 7px;
+    padding-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    margin-left: 20px;
+}
+
+.msgBubble{
+    /* #b7ae8f */
+    background-color:rgb(255, 255, 255);
+    display: inline-block;
+    padding: 6.5px;
+    border-radius: 8px;
+    width: auto; 
+    /* width:auto; display:inline-block !important; display:inline; */
+    /* vertical-align: middle; */
+}
+
+.bubbleImg{
+    width:35px;
+    height: 35px;
+    border-radius: 3px;
+}
+
+
+    /*right---------------------------------------------------------*/
+    
+    .rightMsg{
+        height: 20px;
+        width: auto;
+        border-radius: 7px;
+        padding-top: 25px;
+        display: grid;
+        grid-template-columns: 10fr 1fr;
+        margin-right: 10px;
+        justify-items: right;
+        /* animation: bubbleAnima 1s 1; */
+    }
+
+    /* @keyframes bubbleAnima {
+        0%{
+            transform: translateY(40px);
+        }
+        100%{
+            transform: translateY(0px);
+        }
+    } */
+    
+
+    /* ----------------------------------------------------- */
+
+
+
+    /* ----------------------------------------------------------------
+    RSendBar */
+.RSendBar{
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+}
+
+.functionBar{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+}
+
+    /* ------------------------------------------------------------------ */
+
+
+    /* ----------------------------------------------------------------
+    textingBar */
+
+.textingBar-texting{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    border: 0;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-indent: 20px;
+    padding-top: 5px;
+    font-weight: 100;
+}
+
+input{
+    outline: none;
+}
+
+
+
+.rightMsgG{
+    height: 20px;
+    width: auto;
+    border-radius: 7px;
+    padding-top: 35px;
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    margin-right: 10px;
+    justify-items: right;
+}
+
+.group-users-name{
+    
+}
+
+.msgBubbleG{
+    background-color:rgb(255, 255, 255);
+    display: inline-block;
+    padding: 6.5px;
+    border-radius: 8px;
+    width: auto; 
+    
+}
+
+.bubbleImgG{
+    width:35px;
+    height: 35px;
+    border-radius: 3px;
+}
+
+.leftMsgG{
+    height: 20px;
+    width: auto;
+    border-radius: 7px;
+    padding-top: 35px;
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    margin-left: 10px;
+    justify-items: left;
+}
+
+
+
+
+
+/*MsgReminder----------------------------------------------*/
+
+.reminder{
+    animation: liRemin 1.5s infinite;
+}
+
+@keyframes liRemin {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.05);
+        background-color: red;
+    }
+    100%{
+        transform: scale(1);
+    }
+}
