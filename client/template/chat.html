@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polars-chat</title>
+    <link rel="stylesheet" href="/style/chat.css">
+    <link rel="stylesheet" href="/style/card.css">
+    <link rel="stylesheet" href="/style/iconChat.css">
+    <link rel="stylesheet" href="/style/iconChat2.css">
+    <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- <script src="/src/jquery.js"></script> -->
+</head>
+<body>
+    <div id="container">
+        <div class="cardHide" id="cardId">
+                <div class="partone">
+                    <i class="icongengduo2"></i>
+                    <img src="/static/img/Avatar7.png" alt="头像" class="cardHeadImg">
+                    <i class="iconguanbi1"></i>
+                </div>
+                <div class="parttwo" contenteditable="true">向兴强</div>
+                <div class="partthree" contenteditable="true">不看路人，不换爱人</div>
+                <div class="partfour">
+                    <div class="iconList">
+                        <i class="iconfix"></i>
+                        <i class="iconxie2"></i>
+                    </div>
+                    <div class="msgList">
+                        <ul>
+                            <li class="leaveList"><strong>Jamond</strong>:今天阳光很好，你也是！</li>
+                            <li class="leaveList"><strong>SUBIYA</strong>:冲冲冲啊，你就是南波湾！</li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+        <div id="chatBoxId" class="chatBox">   <!-- chatBox  chanChatBox -->
+            <div id="leftSideId" class=" leftSide">  <!-- leftSide   chanLeftSide-->
+                <div class="headBar">
+                    <div class="headBarInsideOne">聊天列表</div>
+                    <a href="#" class="icontianjia-copy"></a>
+                </div>
+                <div class="colLineOne"></div>
+                <div class="colLineTwo"></div>
+                <div class="rowLineOne"></div>
+                <div class="leftBar">
+                    <a class="iconxiaoxi" href="#"></a>
+                    <a class="iconwo"></a> <!--iconlinkman-contacts_ico-->
+                    <a class="iconqita"></a>
+                    <a class="iconshezhi"></a>
+                </div>
+                <div class="usersList">
+                    <ul class="usersListBox">
+                        <li  class="userOne user li" id="jinxi">  <!-- 根据不同用户改变class名称 -->
+                            <img src="/static/img/1616388899992.jpg" alt="头像" class="headImg" width="55px" height="50px">
+                            <div class="usersNameInfor">
+                                <div class="userName" style="display: grid; grid-template-columns: 1fr 1fr;">
+                                    <div class="userNameInsideL " id="jinxiName">向兴强</div> <!-- 根据不同用户改变class名称 -->
+                                    <div class="userNameInsideR">SVIP</div>
+                                </div>
+                                <div class="signature">世界那么大，我想去看看</div>
+                            </div>
+                        </li>
+                        <li  class="userOne user li " id="kailong">
+                            <img src="/static/img/Avatar4.png" alt="头像" class="headImg" width="55px" height="50px">
+                            <div class="usersNameInfor">
+                                <div class="userName" style="display: grid; grid-template-columns: 1fr 1fr;">
+                                    <div class="userNameInsideL " id="kailongName">张凯龙</div>
+                                    <div class="userNameInsideR">SVIP</div>
+                                </div>
+                                <div class="signature">就想安安静静打代码！</div>
+                            </div>
+                        </li>
+
+                        <!-- <li  class="userOne user li" id="group">
+                            <img src="/static/img/1616828173541.jpg" alt="头像" class="headImg" width="55px" height="50px">
+                            <div class="usersNameInfor">
+                                <div class="userNameGroup" id="userNameId">
+                                    <div class="userNameInsideL " id="groupName" style="font-size: 10px;">秃头选手摸鱼群</div>
+                                </div>
+                                <div class="signature">好好学习</div>
+                            </div>
+                        </li> -->
+
+                    </ul>
+                </div>
+            </div>
+            <div id="rightSideId" class="rightSide__hide">
+                <div class="colLineThree"></div>
+                <div class="rightInsodeBox">
+                    <div class="RHeadBar">
+                        <div class="RUserName">向兴强</div>
+                        <i class="Rclose iconguanbi"></i>
+                    </div>
+                    <div class="rowLineTwo"></div>
+                    <div class="RChatBar">
+                        <ul class="msgBar">
+                            <!-- <li class="leftMsg bubble">
+                                <img src="/static/img/1616388899992.jpg" alt="" class="bubbleImg">
+                                <div>   
+                                    <div class="msgBubble">上号上号！</div> 
+                                </div> 
+                            </li>
+                            <li class="leftMsg bubble">
+                                <img src="/static/img/1616388899992.jpg" alt="" class="bubbleImg">
+                                <div>   
+                                    <div class="msgBubble">上号上号！</div> 
+                                </div> 
+                            </li>
+                            <li class="rightMsg bubble">
+                                <div>   
+                                    <div class="msgBubble">来啦来啦！！！！！</div> 
+                                </div> 
+                                <img src="/static/img/1616388899992.jpg" alt="" class="bubbleImg">
+                            </li>
+                            <li class="rightMsg bubble">
+                                <div>   
+                                    <div class="msgBubble">冲冲冲</div> 
+                                </div> 
+                                <img src="/static/img/1616388899992.jpg" alt="" class="bubbleImg">
+                            </li> -->
+                            
+                            <li class="rightMsgG groupbubble">
+                                <div style="display:grid;grid-template-rows:1fr 2fr;"> 
+                                    <div class="group-users-name" style="color: white;font-size: 10px;justify-self: right;">jinxi</div>  
+                                    <div class="msgBubbleG">冲冲冲</div> 
+                                </div>
+                                <img src="/static/img/1616388899992.jpg" alt="" class="bubbleImgG">
+                            </li>
+                            <li class="rightMsgG groupbubble">
+                                <div style="display:grid;grid-template-rows:1fr 2fr;"> 
+                                    <div class="group-users-name" style="color: white;font-size: 10px;justify-self: right;">jinxi</div>  
+                                    <div class="msgBubbleG">冲冲冲</div> 
+                                </div>
+                                <img src="/static/img/1616388899992.jpg" alt="" class="bubbleImgG">
+                            </li>
+                            <li class="leftMsgG groupbubble">
+                                <img src="/static/img/1616388899992.jpg" alt="" class="bubbleImgG">
+                                <div style="display:grid;grid-template-rows:1fr 2fr;"> 
+                                    <div class="group-users-name" style="color: white;font-size: 10px;justify-self: left;">jinxi</div>  
+                                    <div class="msgBubbleG">冲冲冲</div> 
+                                </div>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rowLineThree"></div>
+                    <div class="RSendBar">
+                        <div class="functionBar">
+                            <i class="iconexpressions sendBarIcon"></i>
+                            <i class="iconyuyin sendBarIcon"></i>
+                            <i class="iconvideo sendBarIcon"></i>
+                            <i class="iconfenxiang sendBarIcon"></i>
+                            <i class="iconother sendBarIcon"></i>
+                            <button class="sendMsg" style="grid-area: 1/6/2/8;">发送</button>
+                        </div>
+                        <div class="textingBar">
+                            <textarea  class="textingBar-texting"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/chatMain.js"></script>
+</body>
+</html>
