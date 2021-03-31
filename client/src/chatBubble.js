@@ -1,3 +1,4 @@
+import {getNum} from './tool.js';
 /**
  * @description 添加聊天气泡
  * @param {string} msg 
@@ -27,6 +28,13 @@ export const addBub = (msg,myname,imgUrl,bool) => {
         // 更改头像
         // let img = $('.bubbleImg');
         // img[num].src = imgUrl;
+
+
+        // 保持到最低端？？？
+        // let tempEle = document.getElementsByClassName('bubble')[0];
+        // tempEle.scrollIntoView()
+        // let tempEle = $('li.bubble:last');
+        // tempEle.scrollIntoView({block: "end"})
     }else{
         let html = '<li class="leftMsg bubble">'
         +'<img src="/static/img/1616388899992.jpg" alt="" class="bubbleImg">'
@@ -41,7 +49,11 @@ export const addBub = (msg,myname,imgUrl,bool) => {
         newBub[num].innerHTML = msg;
 
         // let img = $('.bubbleImg');
-        // img[num].src = imgUrl;
+        // img[num].src = `/static/img/Avatar${getNum()}.png`;
+        // let tempEle = document.getElementsByClassName('bubble')[0];
+        // tempEle.scrollIntoView()
+        // let tempEle = $('li.bubble:last');
+        // tempEle.scrollIntoView({block: "end"})
     }
 }
 
@@ -78,6 +90,9 @@ export const addBubGroup = (msg,myname,imgUrl,bool) => {
 
         let newBub = $('.msgBubbleG');
         newBub[num].innerHTML = msg;
+
+        let img = $('.bubbleImgG');
+        img[num].src = `/static/img/Avatar${getNum()}.png`;
 
         let newbubName = $('.group-users-name');
         newbubName[num].innerHTML = myname;

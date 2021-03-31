@@ -3,7 +3,7 @@
  * @param {string} id 
  * @returns object
  */
-export const $ = (id) => {
+const $ = (id) => {
         return document.getElementById(id)
 }
 
@@ -16,3 +16,6 @@ export const getNum = () => {
         return Math.ceil(Math.random()*15)
 }
 
+export const getClasses = (cla) => {
+        return document.getElementsByClassName(cla)
+}

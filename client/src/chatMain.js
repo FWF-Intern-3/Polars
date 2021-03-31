@@ -2,11 +2,12 @@ import {addBub,addBubGroup}from './chatBubble.js'
 import {addUser,openBox,openChatBoxEach,init,goFirst,userRecord} from './chatUserList.js'
 import {storeFun}from './store.js'
 import {cardsRun}from './Cards.js'
-import {getNum,get} from './tool.js'
+import {getNum,get,getClasses} from './tool.js'
 import {reminder,judgeBox}from './msgReminder.js'
 
-addUser('group','groupName','没事儿，就想好好<del>摸鱼</del>学习!','/static/img/1616828173541.jpg')
-addUser('Jamond','JamondName','这个人很懒，什么都没写！',`/static/img/Avatar${getNum()}.png`)
+addUser('group','groupName','天理大学生<strong><del>摸鱼</del></strong>学习群!','/static/img/1616828173541.jpg')
+// addUser('Jamond','JamondName','这个人很懒，什么都没写！',`/static/img/Avatar${getNum()}.png`)
+// addUser('jinxi','jinxiName','这个人很懒，什么都没写！',`/static/img/Avatar${getNum()}.png`)
 
 const socket = new WebSocket('wss://echo.websocket.org');
 socket.onopen =(evt) => {
@@ -14,7 +15,8 @@ socket.onopen =(evt) => {
 }
 
 socket.onclose = (evt) => {
-        alert('连接已断开！')
+        alert('连接已断开！');
+        window.location.href = '/template/signIn(new).html'
 }
 
 socket.onmessage =(evt) => {
@@ -25,14 +27,20 @@ socket.onmessage =(evt) => {
 
 
 
-const userInfor = new Object();
-userInfor.name = prompt('你的名称（只支持英文）');
-userInfor.id = prompt('你的ID');
-localStorage.setItem('logInUser',JSON.stringify(userInfor));
+export const userInfor = new Object();
+// userInfor.name = prompt('你的名称（只支持英文）');
+// userInfor.id = prompt('你的ID');
+// localStorage.setItem('logInUser',JSON.stringify(userInfor));
 
 // let getUserName = localStorage.getItem('userInfor');
 // getUserName = JSON.parse(getUserName);
 // userInfor.name = getUserName.name;
+// localStorage.setItem('logInUser',JSON.stringify(userInfor));
+
+let getUserName = localStorage.getItem('logInUser');
+getUserName = JSON.parse(getUserName);
+userInfor.name = getUserName.name;
+
 
 
 const sendMsg = (theCode,myname,friend,msg) => {
@@ -50,10 +58,10 @@ const sendMsg = (theCode,myname,friend,msg) => {
     }
     // 用于测试 实际上code 不可能 = 3！
     else if(theCode === '3'){
-        val.code = '1';
+        val.code = '3';
         val.fromName = myname;
-        val.toName = null;
-        val.data = `${msg}`;
+        val.toName = friend;
+        val.data = `$${msg}`;
     }
     socket.send(JSON.stringify(val))
 }
@@ -79,7 +87,7 @@ $('.sendMsg').click(
             val2.value = '';
         }
         // 视窗保持在底部
-        $('.RChatBar').animate({scrollTop: $('.RChatBar').height()}, 50);
+        //$('.msgBar').animate({scrollTop: $('.msgBar').height()}, 50);
     }
 );
 
@@ -127,8 +135,54 @@ const mainGate = (mainData) => {
 // )
 
 
-$('.icontianjia-copy').click(
+// $('.icontianjia-copy').click(
+//     () => {
+//         sendMsg('3','Jamond','xxq','测试下,看看啥情况!!!!！')
+//     }
+// )
+
+
+// $('.user').contextmenu(
+//     () => {
+//         alert('点击了鼠标右键！')
+//     }
+// )
+
+
+const initRin = (() => {
+    let temp = getClasses('headImg');
+    for(let i = 0;i<temp.length;i++){
+        temp[i].addEventListener('click',(event) => {
+            event.stopPropagation();
+            $('#cardId').toggleClass('cardHide');
+            $('#cardId').toggleClass('card');
+            $('#chatBoxId').toggleClass('chatBox');
+            $('#chatBoxId').toggleClass('cardHide');
+            $('.cardHeadImg').attr('src',`${event.target.src}`);
+            $('.partthree').html(`${event.target.nextSibling.lastChild.innerHTML}`)
+            $('.parttwo').html(`${event.target.nextSibling.firstChild.firstChild.innerHTML}`)
+        })
+    }
+    $('.iconqita').click(
+        () => {
+            $('#popCardTwoID').toggleClass('popCardTwo');
+            $('#popCardTwoID').toggleClass('cardHide')
+        }
+    )
+})();
+
+
+$('.iconguanbi1').click(
     () => {
-        sendMsg('3','Jamond',null,'测试下')
+        $('#cardId').toggleClass('card');
+        $('#cardId').toggleClass('cardHide');
+        $('#chatBoxId').toggleClass('chatBox');
+        $('#chatBoxId').toggleClass('cardHide')
     }
 )
+
+setTimeout(() => {
+    sendMsg('1','向兴强',null,'欢迎来到POLARS!');
+    sendMsg('1','张凯龙',null,'欢迎来到POLARS!');
+    sendMsg('1','杜宇轩',null,'欢迎来到POLARS!');
+},2000)

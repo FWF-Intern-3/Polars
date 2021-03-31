@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.PopupBox{
+    display: none;   /*使用时取消注释*/
+}
+.conPopup{
+    width: 340px;
+    height: 210px;
+    background-color: #D3D3D3;
+    grid-area: 6/6/7/7;
+    border-radius: 20px;
+    animation: pop 1s 1;
+}
+
+@keyframes pop {
+    0%{
+        transform: scale(0.5);
+        opacity: 0.4;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.show{
+    display: grid;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(11,1fr);
+    grid-template-rows:repeat(11,1fr);
+}
+
+#headBar{
+    font-size: 30px;
+    padding-top: 5px;
+    padding-left: 30px;
+    font-weight: 300;
+}
+
+#myP{
+    width: 82%;
+    height: 35%;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: left;
+    padding-top: 40px;
+}
+
+.but{
+    width: 90px;
+    height: 30px;
+    border-radius: 4px;
+    color: white;
+    background-color: #5F7285;
+    outline: none;
+    border: none;
+    margin-left: 32px;
+}
+.but:hover{
+    background-color:#046582;
+}
+
+.butTwo{
+    margin-left: 70px;
+}
+
+
+
+
+.ani{
+    animation: close 1s 1;
+}
+
+@keyframes close {
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 0;
+        transform: scale(0.6);
+    }
+}

@@ -1,9 +1,12 @@
 import {checkPassword,checkEmail}from './check.js'
-import {$,get}from './tool.js'
+import {get}from './tool.js'
 
 const run = (() => {
-    let submit = $('signIn-side2-submit');
-    submit.addEventListener('click',()=>{signIn()});
+    //let submit = 
+    $('#signIn-side2-submit').click(
+        ()=>{signIn()}
+    )
+    //submit.addEventListener('click',()=>{signIn()});
 })();
  
 //export const storeEmail;
@@ -17,15 +20,15 @@ const signIn = () => {
         axios.post('',{email:email,password:password})
         .then(
             (res)=>{
-                if(res.code === 0){
+                if(res.data.code === '0'){
                     alert(res.msg);
                     //localStorage.setItem('token',res.data.token);
                     window.location.href = '/template/chat.html'  //页面跳转
                     const userInfor = new Object();
-                    userInfor.name = res.username;
+                    userInfor.name = res.data.username;
                     localStorage.setItem('logInUser',JSON.stringify(userInfor));
                 }
-                else if(res.code === 1){
+                else if(res.data.code === '1'){
                     alert(res.msg);
                 }
             }

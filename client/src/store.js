@@ -1,6 +1,6 @@
 import {addBub}from './chatBubble.js'
 import {userRecord}from './chatUserList.js'
-
+import {userInfor}from './chatMain.js'
 /**
  * @description 本地储存用户聊天信息构造函数
  * @param {string} myname 
@@ -18,8 +18,8 @@ import {userRecord}from './chatUserList.js'
 
 /**
  * @description 储存私聊 群聊聊天信息
- * @param {*} mainData 
- * @param {*} code 
+ * @param {Object} mainData 
+ * @param {string} code 
  */
 export const storeFun = (mainData,code) => {   
     let userKey;  
@@ -59,7 +59,8 @@ export const storeFun = (mainData,code) => {
                 if(len === 50){ // 如果消息大于50条 删除！
                     obj.allmsg.splice(0,1) // 删除第一条信息
                 }
-
+                
+                mainData.data = mainData.data.replace('$','');
                 obj.allmsg[len] = mainData.data; // 存入一条聊天信息
                 localStorage.setItem(`${mainData.toName}${mainData.fromName}`,JSON.stringify(obj))
             }else{
@@ -80,16 +81,30 @@ export const storeFun = (mainData,code) => {
                 let tempName = mainData.fromName;
                 let tempOBJ = new Object();
 
-                tempOBJ[tempName] = mainData.data;
-                obj.allmsg[msgLen] = tempOBJ;
-                localStorage.setItem('group',JSON.stringify(obj))
+                if(tempName != userInfor.name&&mainData.data.charAt(0) === '$'){
+                    mainData.data = mainData.data.replace('$','');
+                    tempOBJ[tempName] = mainData.data;
+                    obj.allmsg[msgLen] = tempOBJ;
+                    localStorage.setItem('group',JSON.stringify(obj))
+                }else{
+                    tempOBJ[tempName] = mainData.data;
+                    obj.allmsg[msgLen] = tempOBJ;
+                    localStorage.setItem('group',JSON.stringify(obj))
+                }
             }else{
                 let tempName = mainData.fromName;
                 let tempOBJ = new Object();
                 
-                tempOBJ[tempName] = mainData.data;
-                obj.allmsg[0] = tempOBJ;
-                localStorage.setItem('group',JSON.stringify(obj))
+                if(tempName != userInfor.name&&mainData.data.charAt(0) === '$'){
+                    mainData.data = mainData.data.replace('$','');
+                    tempOBJ[tempName] = mainData.data;
+                    obj.allmsg[0] = tempOBJ;
+                    localStorage.setItem('group',JSON.stringify(obj))
+                }else{
+                    tempOBJ[tempName] = mainData.data;
+                    obj.allmsg[0] = tempOBJ;
+                    localStorage.setItem('group',JSON.stringify(obj))
+                }
             }
         }
 }

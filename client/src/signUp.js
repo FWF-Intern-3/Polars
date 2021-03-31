@@ -10,10 +10,10 @@ const getCaptcha = (myemail) => {
         axios.post('',{email:myemail})
         .then(
             (res)=>{
-                if(res.code === 0){
+                if(res.data.code === '0'){
                     alert('验证码已发至邮箱！');
                 }
-                else if(res.code === 1){ // 以具体后端接口而定
+                else if(res.data.code === '1'){ // 以具体后端接口而定
                     alert('该邮箱已被注册，请更换邮箱！');
                     return false;
                 }
@@ -42,17 +42,22 @@ const signUp = () => {
             alert('请再次确认密码')
         }
         else if(password === password2){
-            axios.post('',{email:myemail,'password':password,captcha:mycaptcha})
+            axios.post('',{email:myemail,'password':password,captcha:mycaptcha,username:userName})
             .then(
                 (res)=>{
-                    if(res.code === 0){
+                    if(res.data.code === '0'){
                         alert('注册成功!');
                         //localStorage.setItem('token',res.token);
                         window.location.href = '/template/signIn.html' // 页面跳转 
                     }
-                    else if(res.code === 1){
+                    else if(res.data.code === '1'){
                         alert('验证码错误')
                     }
+                }
+            )
+            .catch(
+                (err)=>{
+                    alert('服务器响应失败')
                 }
             )
             alert('注册信息填写无误，向服务器提交注册信息中！')
