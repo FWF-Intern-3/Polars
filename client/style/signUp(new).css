@@ -1,0 +1,237 @@
+*{padding:0;margin: 0;}
+
+ /*修改placeholder字体样式*/
+ input:-moz-placeholder,textarea:-moz-placeholder{  
+    color: white;/* Mozilla Firefox 4 to 18 */
+    /* opacity: 0.7; */
+    font-size: 17px;
+    letter-spacing: 5px;
+ }
+ input：：-moz-placeholder{  
+    color: white;/* Mozilla Firefox 19+ */
+    /* opacity: 0.7; */
+    font-size: 17px;
+    letter-spacing: 5px;
+ }
+ input:-ms-input-placeholder,textarea:-ms-input-placeholder{  
+    color: white;
+    /* opacity: 1; */
+    font-size: 17px;
+    letter-spacing: 5px;
+}  
+ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{  
+    color: white;
+    /* opacity: 1; */
+    font-size: 17px;    
+    letter-spacing: 5px;
+ }
+
+input{
+    font-size: 17px;
+    letter-spacing: 3px;
+}
+
+#container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgb(45, 12, 19);
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(12,1fr);
+}
+
+#side{
+    color: white;
+    grid-area: 2/2/3/3;
+    text-align: center;
+    letter-spacing: 10px;
+    font-size: 20px;
+}
+
+h1{
+    color: white;
+    text-align: center;
+    letter-spacing: 20px;
+    font-size: 60px;
+    font-weight:1200;
+    grid-area: 1/2/1/3;
+}
+
+#signUp{
+    width: 700px;
+    height: 450px;
+    /* background-image: linear-gradient(to top, #4fb576 0%, #44c489 30%, #28a9ae 46%, #28a2b7 59%, #4c7788 71%, #6c4f63 86%, #432c39 100%); */
+    background-color: white;
+    background-color: rgb(94, 83, 20);
+    grid-area: 3/2/12/3;
+    margin-top: 30px;
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+}
+
+#signUp-side1{
+    background-color: #8766AD;
+    color: white;
+    border-radius:50px 0 0 50px ;
+    display: grid;
+    grid-template-rows: repeat(12,37px);
+    width: 349px;
+}
+
+#signUp-side2{
+    border-radius: 0 50px 50px 0;
+    color: white;
+    background-image: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);
+    display: grid;
+    grid-template-rows: repeat(12,37px);
+    width: 349px;
+}
+
+#signUp-side1-h2{
+    letter-spacing: 6px;
+    font-size: 40px;
+    grid-area: 2/1/3/2;
+    padding-left: 30px;
+    margin-top: 15px;
+}
+
+.signUp-side1-insideFont{
+    font-weight: 600;
+    letter-spacing: 5px;
+    padding-left: 28px;
+}
+
+#signUp-side2-head{
+    font-size: 47px;
+    font-weight: 400;
+    letter-spacing: 25px;
+    grid-area: 2/1/3/2;
+    padding-left: 200px;
+    margin-top:10px ;
+}
+
+#signUp-side2-back{
+    margin-top: 60px;
+    margin-left: 20px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: yellowgreen;
+}
+
+input{
+    outline: none;
+}
+
+.signUp-side2-input{
+    width: 300px;
+    height: 40px;
+    background:transparent;
+    border: solid white;
+    border-radius: 40px;
+    color: white;
+    text-indent: 25px;
+    margin-left: 25px;
+}
+
+.signUp-side2-inputEmail{
+    grid-area: 4/1/5/2;
+    margin-top: 5px;
+}
+
+.signUp-side2-inputCaptcha{
+    width: 150px;
+    grid-area: 5/1/6/2;
+    margin-top: 22px;
+}
+
+#getCaptcha{
+    grid-area: 6/1/7/2;
+    margin-left: 210px;
+    margin-top: -3px;
+}
+
+.signUp-side2-inputUserName{
+    margin-top: 2px;
+    grid-area: 7/1/8/2;
+}
+
+.signUp-side2-inputPassword{
+    grid-area: 8/1/9/2;
+    margin-top: 18.5px;
+}
+
+.signUp-side2-conPass{
+    grid-area: 9/1/10/2;
+    margin-top: 35px;
+}
+
+#signUp-side2-submit{
+    height: 40px;
+    width: 300px;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 22px;
+    letter-spacing: 15px;
+    background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
+    outline: none;
+    grid-area: 11/1/12/2;
+    margin-top: 15px;
+    justify-self: center;
+    padding-left: 21px;
+    cursor: pointer;
+}
+#signUp-side2-submit:hover{
+    background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+}
+
+.iconyonghu1{
+    grid-area: 11/1/12/2;
+    text-align: center;
+    font-weight: 700;
+    color: white;
+    font-size: 40px;
+}
+
+.iconfanhui{
+    font-weight: 700;
+    color: white;
+    font-size: 40px;
+}
+
+.iconchenggong-01{
+    font-family: "iconfont" !important;
+    font-style: normal;
+    font-size: 21px;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    grid-area: 5/1/6/2;
+    margin-top: 33px;
+    margin-left: 150px;
+}
+.iconcuowushibaibukeyong{
+    font-family: "iconfont" !important;
+    font-style: normal;
+    font-size: 19px;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    grid-area: 5/1/6/2;
+    margin-top: 34px;
+    margin-left: 150px;
+    display: none;
+}
+.signUp-side2-toOther:hover{
+    color: #a6522c;
+}

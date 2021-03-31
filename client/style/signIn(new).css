@@ -1,0 +1,196 @@
+*{padding:0;margin: 0;}
+
+ /*修改placeholder字体样式*/
+ input:-moz-placeholder,textarea:-moz-placeholder{  
+    color: white;/* Mozilla Firefox 4 to 18 */
+    /* opacity: 0.7; */
+    font-size: 17px;
+    letter-spacing: 5px;
+ }
+ input：：-moz-placeholder{  
+    color: white;/* Mozilla Firefox 19+ */
+    /* opacity: 0.7; */
+    font-size: 17px;
+    letter-spacing: 5px;
+ }
+ input:-ms-input-placeholder,textarea:-ms-input-placeholder{  
+    color: white;
+    /* opacity: 1; */
+    font-size: 17px;
+    letter-spacing: 5px;
+}  
+ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{  
+    color: white;
+    /* opacity: 1; */
+    font-size: 17px;    
+    letter-spacing: 5px;
+ }
+
+ input{
+    font-size: 17px;
+    letter-spacing: 3px;
+}
+
+#container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgb(45, 12, 19);
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(12,1fr);
+}
+
+#side{
+    color: white;
+    grid-area: 2/2/3/3;
+    text-align: center;
+    letter-spacing: 10px;
+    font-size: 20px;
+}
+
+h1{
+    color: white;
+    text-align: center;
+    letter-spacing: 20px;
+    font-size: 60px;
+    font-weight:1200;
+    grid-area: 1/2/1/3;
+}
+
+#signIn{
+    width: 700px;
+    height: 450px;
+    /* background-image: linear-gradient(to top, #4fb576 0%, #44c489 30%, #28a9ae 46%, #28a2b7 59%, #4c7788 71%, #6c4f63 86%, #432c39 100%); */
+    background-color: #8766AD;
+    /* grid-area: 4/2/13/3; */
+    grid-area: 3/2/12/3;
+    margin-top: 30px;
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+}
+
+#signIn-side1{
+    background-color: #8766AD;
+    color: white;
+    border-radius:50px 0 0 50px ;
+    display: grid;
+    grid-template-rows: repeat(12,37px);
+    width: 349px;
+}
+
+#signIn-side2{
+    background-color: violet;
+    border-radius: 0 50px 50px 0;
+    color: white;
+    /*下面这个还不错*/
+    background-image: linear-gradient(to top, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);
+    display: grid;
+    grid-template-rows: repeat(12,37px);
+    width: 349px;
+}
+
+#signIn-side1-h2{
+    letter-spacing: 6px;
+    font-size: 40px;
+    grid-area: 2/1/3/2;
+    padding-left: 30px;
+    margin-top: 15px;
+}
+
+.signIn-side1-insideFont{
+    font-weight: 600;
+    letter-spacing: 5px;
+    padding-left: 28px;
+}
+
+#signIn-side2-head{
+    font-size: 47px;
+    font-weight: 400;
+    letter-spacing: 25px;
+    grid-area: 2/1/3/2;
+    padding-left: 30px;
+    margin-top:10px ;
+}
+
+#signIn-side2-toSignUp{
+    margin-top: 85px;
+    margin-left: 200px;
+    font-size: 14px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: yellowgreen;
+}
+
+.signIn-side2-input{
+    width: 300px;
+    height: 40px;
+    background:transparent;
+    border: solid white;
+    border-radius: 40px;
+    color: white;
+    text-indent: 25px;
+    margin-left: 25px;
+}
+
+input{
+    outline: none;
+}
+
+.signIn-side2-inputEmail{
+    grid-area: 5/1/6/2;
+}
+
+.signIn-side2-inputPassword{
+    grid-area: 7/1/8/2;
+}
+
+#signIn-side2-submit{
+    height: 40px;
+    width: 300px;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 22px;
+    letter-spacing: 15px;
+    background-image: linear-gradient(-20deg, #6e45e2 0%, #88d3ce 100%);
+    outline: none;
+    grid-area: 10/1/11/2;
+    margin-top: -10px;
+    justify-self: center;
+    padding-left: 21px;
+    cursor: pointer;
+}
+#signIn-side2-submit:hover{
+    background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+}
+
+ul{
+    list-style: none;
+    grid-area: 8/1/9/2;
+    margin-top: 25px;
+    margin-left: 75px;
+}
+li{
+   display: inline-block;
+}
+
+.iconyonghu1{
+    grid-area: 11/1/12/2;
+    text-align: center;
+    font-weight: 700;
+    color: white;
+}
+
+.signIn-side2-toOther:hover{
+    color: #a6522c;
+}

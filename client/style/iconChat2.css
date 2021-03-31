@@ -1,0 +1,179 @@
+.iconxiaoxi{
+    font-family: "iconfont" !important;
+    font-size: 32px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-left: 7px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.iconwo{
+    font-family: "iconfont" !important;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-left: 7px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.iconqita{
+    font-family: "iconfont" !important;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-left: 7px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+.iconshezhi{
+    font-family: "iconfont" !important;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-left: 7px;
+    margin-top: 10px;
+    grid-area: 5/1/6/2;
+    cursor: pointer;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: yellow;
+}
+
+.icontianjia-copy{
+    font-family: "iconfont" !important;
+    font-size: 26px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-left: 4px;
+    margin-top: 10px;
+}
+
+.li{
+    list-style: none;
+    width: 90%;
+    height: 47px;
+    margin: 10px auto;
+    border-radius: 15px;
+    /* background: rgba(39,117,182,1); */
+    background-color: #e8b004;
+    color: black;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    cursor: pointer;
+}
+
+.li:hover{
+    transform: scale(1.005)  translate(-2px);
+}
+
+
+
+.usersNameInfor{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.headImg{
+    border-radius: 50%;
+    width: 43px;
+    height: 43px;
+    margin-top: 2px;
+    margin-left: 7px;
+}
+
+.userName{
+    color: white;
+    letter-spacing: 4px;
+    font-size: 17px;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    cursor: pointer;
+}
+.userNameInsideR{
+    background-color: red;
+    width: 35px;
+    height: 15px;
+    border-radius: 5px;
+    font-size: 4px;
+    letter-spacing: 1px;
+    font-weight: 900;
+    padding-left: 4px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.signature{
+    font-size: 5px;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.iconguanbi{
+    font-family: "iconfont" !important;
+    font-size: 29px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: white;
+    margin-top: 8px;
+    margin-left: 45px;
+    cursor: pointer;
+}
+.iconguanbi:hover{
+    color: yellow;
+}
+
+.sendBarIcon{
+    font-family: "iconfont" !important;
+    font-size: 29px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: white;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.sendBarIcon:hover{
+    color: yellow;
+}
+
+.iconexpressions{
+    font-weight: 500;
+    font-size: 27px;
+    margin-top: 3px;
+}
+
+.iconyuyin{
+    font-weight:0;
+}
+
+.iconvideo{
+    font-weight: 900;
+}
+
+#userNameId{
+    display: grid;
+}
+
+
+
+

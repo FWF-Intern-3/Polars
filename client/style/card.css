@@ -1,0 +1,218 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+input{
+    outline: none;
+    border: 0;
+}
+
+.card{
+	grid-area: 6/6/7/7;
+	width: 350px;
+	height: 390px;
+	grid-template: 400px;
+	background-color: #513c20;
+	border-radius: 40px;
+	display: grid;
+	grid-template-rows: 3fr 1.5fr 1.5fr 6fr;
+	animation: card 0.4s 1;
+}
+
+.cardHide{
+    display: none;
+}
+
+@keyframes card {
+	0%{
+		transform: scale(0.8);
+		opacity: 0.6;
+	}
+	100%{
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.partone{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	position: relative;
+}
+
+.cardHeadImg{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin-top: 17px;
+	justify-self: center;
+}
+
+.parttwo{
+	text-align: center;
+	color: white;
+	font-size: 27px;
+	margin-top: 5px;
+	letter-spacing: 4px;
+	font-weight: 100;
+}
+
+.partthree{
+	text-align: center;
+	color: white;
+	font-size: 16px;
+	letter-spacing: 2px;
+	margin-top: -3px;
+	font-weight: 100;
+}
+
+.partfour{
+	width: 300px;
+	height: 180px;
+	border-radius: 20px;
+	background-color: #F0945D;
+	justify-self: center;
+	margin-top: -17px;
+	display: grid;
+	grid-template-rows: 1fr 4fr;
+}
+
+.iconList{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 5fr;
+}
+
+.leaveList{
+	list-style: none;
+	color:white;
+	margin-left: 10px;
+	margin-top: 5px;
+	letter-spacing: 1px;
+	font-weight: 100;
+}
+
+
+i{
+	cursor: pointer;
+}
+i:hover{
+	color: yellow;
+}
+
+.icongengduo2{
+	font-family: "iconfont" !important;
+	font-size: 30px;
+	font-style: normal;
+	font-weight: 100;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: white;
+	justify-self: center;
+	margin-top: 23px;
+}
+
+.iconguanbi1{
+	font-family: "iconfont" !important;
+	font-size: 35px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: white;
+	justify-self: center;
+	margin-top: 20px;
+}
+
+.iconfix{
+	font-family: "iconfont" !important;
+	font-size: 22px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: white;
+	margin-left: 7px;
+	margin-top: 4px;
+}
+
+.iconxie2{
+	font-family: "iconfont" !important;
+	font-size: 22px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: white;
+	margin-left: 7px;
+	margin-top: 4px;
+}
+
+
+.popCardone{
+	width: 80px;
+	height: 90px;
+	border-radius: 15px;
+	background-color: #312413;
+	position:absolute;
+	top: 47px;
+	left: 18px;
+	animation: littlepop 0.2s 1;
+}
+ 
+@keyframes littlepop {
+	0%{
+		transform: scale(0.8);
+		opacity: 0.7;
+	}
+	100%{
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.moreListUl{
+	list-style: nnone;
+}
+
+.moreListLi{
+	color: white;
+	letter-spacing: 5px;
+	text-align: center;
+	font-weight: 100;
+	margin-top: 7px;
+	cursor: pointer;
+}
+
+.moreListLi:hover{
+	color: yellow;
+}
+
+.popCardTwo{
+    position: absolute;
+    top: 170px;
+    left: 20px;
+    width: 150px;
+    height: 250px;
+    background-color: #312413;
+    border-radius: 25px;
+	animation: cardTwo 0.2s 1;
+}
+
+@keyframes cardTwo {
+	0%{
+		transform: scale(0.8);
+		opacity: 0.7;
+	}
+	100%{
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.popCardTwoLi{
+	margin-top: 15px;
+	margin-left: 30px;
+	font-size: 20px;
+}
+
+.popCardTwoLi:hover{
+	color: yellow;
+	cursor: pointer;
+}
