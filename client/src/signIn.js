@@ -1,6 +1,9 @@
 import {checkPassword,checkEmail}from './check.js'
 import {get}from './tool.js'
 
+/**
+ * @description 初始化 添加监听事件
+ */
 const run = (() => {
     //let submit = 
     $('#signIn-side2-submit').click(
@@ -11,6 +14,9 @@ const run = (() => {
  
 //export const storeEmail;
 
+/**
+ * @description 登录主要逻辑
+ */
 const signIn = () => {    
     let email = get('signIn-side2-inputEmail').value;
     let password = get('signIn-side2-inputPassword').value;
