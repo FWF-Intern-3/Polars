@@ -6,8 +6,8 @@ import {getNum,get,getClasses} from './tool.js'
 import {reminder,judgeBox}from './msgReminder.js'
 
 addUser('group','groupName','天理大学生<strong><del>摸鱼</del></strong>学习群!','/static/img/1616828173541.jpg')
-// addUser('Jamond','JamondName','这个人很懒，什么都没写！',`/static/img/Avatar${getNum()}.png`)
-// addUser('jinxi','jinxiName','这个人很懒，什么都没写！',`/static/img/Avatar${getNum()}.png`)
+addUser('Jamond','JamondName','这个人很懒，什么都没写！',`/static/img/Avatar${getNum()}.png`)
+addUser('jinxi','jinxiName','这个人很懒，什么都没写！',`/static/img/Avatar${getNum()}.png`)
 
 const socket = new WebSocket('wss://echo.websocket.org');
 socket.onopen =(evt) => {
@@ -42,7 +42,13 @@ getUserName = JSON.parse(getUserName);
 userInfor.name = getUserName.name;
 
 
-
+/**
+ * @description 发信息
+ * @param {string} theCode 
+ * @param {string} myname 
+ * @param {string} friend 
+ * @param {string} msg 
+ */
 const sendMsg = (theCode,myname,friend,msg) => {
     let val = new Object();
     if(theCode === '2'){
@@ -67,10 +73,22 @@ const sendMsg = (theCode,myname,friend,msg) => {
 }
 
 
+
+/**
+ * @description 刷新用户列表
+ * @param {object} mainData 
+ */
 const refreshUser = (mainData) => {
+    let set = new Set();
+    let obj = $('.user');
+    for(let i = 0;i < obj.length; i++){
+        set.add(obj[i].id)
+    }
     for(let i = 0;i<mainData.data.length;i++){
         let temp = mainData.data[i];
-        addUser(temp,`${temp}Name`,'Hello World',`/static/img/Avatar${getNum()}.png`)
+        if(!set.has(temp)){
+            addUser(temp,`${temp}Name`,'Hello World',`/static/img/Avatar${getNum()}.png`)
+        }
     }
 }
 
@@ -91,6 +109,10 @@ $('.sendMsg').click(
     }
 );
 
+/**
+ * @description 收到服务器消息进行判别分类
+ * @param {object} mainData 
+ */
 const mainGate = (mainData) => {
     switch(mainData.code){
         case '1': // 群聊
@@ -116,39 +138,9 @@ const mainGate = (mainData) => {
 }
 
 
-// addBubGroup('测试一下群聊消息,左边，左边，左边！','jamond','null',false)
-
-
-// $('.user').click((event) => {
-//     alert(event.target.id)
-// })
-
-
-// $('.user').click(
-//     () => {
-//         // if(classLen === 4&&judgeBox()){
-//         //     $('')
-//         // }
-//         let temp = $('.user').html();
-//         alert(temp)
-//     }
-// )
-
-
-// $('.icontianjia-copy').click(
-//     () => {
-//         sendMsg('3','Jamond','xxq','测试下,看看啥情况!!!!！')
-//     }
-// )
-
-
-// $('.user').contextmenu(
-//     () => {
-//         alert('点击了鼠标右键！')
-//     }
-// )
-
-
+/**
+ * @description 初始化
+ */
 const initRin = (() => {
     let temp = getClasses('headImg');
     for(let i = 0;i<temp.length;i++){
@@ -156,8 +148,8 @@ const initRin = (() => {
             event.stopPropagation();
             $('#cardId').toggleClass('cardHide');
             $('#cardId').toggleClass('card');
-            $('#chatBoxId').toggleClass('chatBox');
             $('#chatBoxId').toggleClass('cardHide');
+            $('#chatBoxId').toggleClass('chatBox');
             $('.cardHeadImg').attr('src',`${event.target.src}`);
             $('.partthree').html(`${event.target.nextSibling.lastChild.innerHTML}`)
             $('.parttwo').html(`${event.target.nextSibling.firstChild.firstChild.innerHTML}`)
@@ -168,21 +160,25 @@ const initRin = (() => {
             $('#popCardTwoID').toggleClass('popCardTwo');
             $('#popCardTwoID').toggleClass('cardHide')
         }
+    );
+    setTimeout(() => {
+        sendMsg('1','向兴强',null,'欢迎来到POLARS!');
+        sendMsg('1','张凯龙',null,'欢迎来到POLARS!');
+        sendMsg('1','杜宇轩',null,'欢迎来到POLARS!');
+    },2000);
+    $('.iconguanbi1').click(
+        () => {
+            $('#cardId').toggleClass('card');
+            $('#cardId').toggleClass('cardHide');
+            $('#chatBoxId').toggleClass('chatBox');
+            $('#chatBoxId').toggleClass('cardHide')
+        }
+    )
+    $('.icontianjia-copy').click(
+        () => {
+            addUser('Jamond','JamondName','这个人很懒，什么都没写！',`/static/img/Avatar${getNum()}.png`)
+    addUser('jinxi','jinxiName','这个人很懒，什么都没写！',`/static/img/Avatar${getNum()}.png`)
+        }
     )
 })();
 
-
-$('.iconguanbi1').click(
-    () => {
-        $('#cardId').toggleClass('card');
-        $('#cardId').toggleClass('cardHide');
-        $('#chatBoxId').toggleClass('chatBox');
-        $('#chatBoxId').toggleClass('cardHide')
-    }
-)
-
-setTimeout(() => {
-    sendMsg('1','向兴强',null,'欢迎来到POLARS!');
-    sendMsg('1','张凯龙',null,'欢迎来到POLARS!');
-    sendMsg('1','杜宇轩',null,'欢迎来到POLARS!');
-},2000)
