@@ -57,6 +57,13 @@ export const addBub = (msg,myname,imgUrl,bool) => {
     }
 }
 
+/**
+ * @description 添加聊天气泡
+ * @param {string} msg 
+ * @param {string} myname 
+ * @param {string} imgUrl 
+ * @param {Boolean} bool  true: 我  false: 他人
+ */
 export const addBubGroup = (msg,myname,imgUrl,bool) => {
     let num = $('.groupbubble').length;
     if(bool){
