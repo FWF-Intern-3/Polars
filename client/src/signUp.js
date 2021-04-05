@@ -1,10 +1,10 @@
 import {checkEmail,checkPassword,checkCaptch,checkUserName}from './check.js'
-import {get,$}from './tool.js'
-/**
- * @description 注册
- * 检测邮箱 检测密码 确认密码一致 提交注册信息
- */
+import {get}from './tool.js'
 
+/**
+ * @description 获取验证码
+ * @param {string} myemail 
+ */
 const getCaptcha = (myemail) => {
     if(checkEmail(myemail)){
         axios.post('',{email:myemail})
@@ -29,8 +29,10 @@ const getCaptcha = (myemail) => {
     }
 }
 
+/**
+ * @description 注册功能主要逻辑
+ */
 const signUp = () => {
-    
     let myemail = get('signUp-side2-inputEmail').value;
     let mycaptcha = get('signUp-side2-inputCaptcha').value;
     let password = get('signUp-side2-inputPassword').value;
@@ -68,14 +70,36 @@ const signUp = () => {
     }
 }
 
+/**
+ * @description 初始化，添加事件监听
+ */
 const run = (() => {
-    let getCaptchaVal = $('getCaptcha');
-    let toSignUp = $('signUp-side2-submit');
-    getCaptchaVal.addEventListener('click',()=>{
+    $('#getCaptcha').click(
+        ()=>{
         let myemail = get('signUp-side2-inputEmail').value;
         getCaptcha(myemail)
-    });
-    toSignUp.addEventListener('click',()=>{signUp()})
+    }
+    );
+    $('#signUp-side2-submit').click(
+        ()=>{signUp()}
+    );
+    $(document).ready(function(){
+        $('.iconchenggong-01').fadeOut(),
+        $('.signUp-side2-inputCaptcha').keydown(
+            ()=>{
+                let len = $('.signUp-side2-inputCaptcha').val().length;
+                if(len === 5){
+                    $('.iconchenggong-01').fadeIn(500)
+                    $('.iconcuowushibaibukeyong').fadeOut(500)
+                }
+                else{
+                    $('.iconchenggong-01').fadeOut();
+                    $('.iconcuowushibaibukeyong').fadeIn(500)
+                }
+            }
+        )
+    }
+    )
 })();
 
 document.onkeydown =  (e) => { // 回车提交表单
@@ -85,24 +109,3 @@ document.onkeydown =  (e) => { // 回车提交表单
         signUp();
     }
 }
-
-/**
- * $  老是报错！ 换成 jQuery 就好
- */
-jQuery(document).ready(function(){
-    jQuery('.iconchenggong-01').fadeOut(),
-    jQuery('.signUp-side2-inputCaptcha').keydown(
-        ()=>{
-            let len = jQuery('.signUp-side2-inputCaptcha').val().length;
-            if(len === 5){
-                jQuery('.iconchenggong-01').fadeIn(500)
-                jQuery('.iconcuowushibaibukeyong').fadeOut(500)
-            }
-            else{
-                jQuery('.iconchenggong-01').fadeOut();
-                jQuery('.iconcuowushibaibukeyong').fadeIn(500)
-            }
-        }
-    )
-}
-)
