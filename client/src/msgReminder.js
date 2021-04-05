@@ -1,7 +1,10 @@
 import {userRecord}from './chatUserList.js'
 
 
-
+/**
+ * @description 消息提醒处理
+ * @param {object} recept 
+ */
 export const reminder = (recept) => {
     let temp = recept.fromName;
     // let classLen = document.getElementById(`${userRecord.name}`).classList.length;
