@@ -19,6 +19,11 @@ export const checkPassword = function(password){
         }
 }
 
+/**
+ * @description 邮箱格式验证
+ * @param {string} email 
+ * @returns 布尔值 表示是否符合要求格式
+ */
 export const checkEmail = function(email){
     if(email == ''){
         alert('请输入邮箱');
@@ -34,6 +39,11 @@ export const checkEmail = function(email){
     }
 }
 
+/**
+ * @description 验证码初步检测
+ * @param {string} captch 
+ * @returns 布尔值 表示是否符合要求格式
+ */
 export const checkCaptch = function(captch){
     if(captch.length === 6){  // 根据后端给的验证码而定
         return true
@@ -44,6 +54,11 @@ export const checkCaptch = function(captch){
     }
 }
 
+/**
+ * 
+ * @param {string} userName 
+ * @returns 布尔值 表示是否符合要求格式
+ */
 export const checkUserName = (userName) => {
     if(userName == ''){
         alert('请输入用户名');
