@@ -1,8 +1,12 @@
 # Polars
+
 #### 简介
 Polar定位为一款简单聊天应用，拥有基本的登录、注册，群聊功能和一对一聊天功能，后持续加入用户留言板等功能。
 
 ps:服务器目前还在测试中，后续更新。
+
+![](https://img.shields.io/badge/license-MIT-yellow)
+![](https://img.shields.io/badge/version-v1.01-yellow)
 
 #### 已实现功能（截止3.31）
 * 登录
