@@ -1,6 +1,6 @@
 <h1 align="center"> Polars</h1>
 
-<p align="center"><img src="https://img.shields.io/badge/license-MIT-yellow"> <img src="https://img.shields.io/badge/version-v1.01-yellow"></p>
+<p align="center"><img src="https://img.shields.io/badge/license-MIT-yellow"> <img src="https://img.shields.io/badge/version-v1.01-yellow"><img src="https://img.shields.io/badge/贡献者-向兴强-yellow"><img src="https://img.shields.io/badge/贡献者-张凯龙-yellow"></p>
 
 
 
